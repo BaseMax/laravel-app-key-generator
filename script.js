@@ -3,7 +3,9 @@ function generateKey() {
   crypto.getRandomValues(bytes);
   const binaryString = String.fromCharCode.apply(null, bytes);
   const base64String = btoa(binaryString);
-  return 'base64:' + base64String;
+  const appKey = 'base64:' + base64String;
+
+  document.getElementById('key-box').textContent = appKey;
 }
 
 function copyKey() {
